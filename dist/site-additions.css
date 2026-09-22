@@ -1,0 +1,116 @@
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: 42px;
+  align-items: stretch;
+  margin-bottom: 30px;
+}
+
+.about-portrait {
+  position: relative;
+  min-height: 520px;
+  border-radius: 18px;
+  overflow: hidden;
+  background: var(--yellow);
+}
+
+.about-portrait .art {
+  position: absolute;
+  inset: 0;
+  min-height: 100%;
+  filter: saturate(.8);
+}
+
+.about-portrait span {
+  position: absolute;
+  left: 22px;
+  bottom: 20px;
+  background: var(--paper);
+  border: 1px solid var(--red);
+  border-radius: 30px;
+  padding: 8px 16px;
+  color: var(--red);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+.about-copy {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: clamp(28px, 5vw, 60px);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  background: var(--pink);
+}
+
+.about-copy h2 {
+  font-size: clamp(30px, 4vw, 50px);
+  line-height: 1.35;
+  margin: 22px 0;
+}
+
+.about-copy p {
+  max-width: 680px;
+  margin: 0 0 18px;
+}
+
+.about-copy .pill { margin-top: 10px; }
+
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin: 30px 0;
+}
+
+.about-cards article {
+  border-top: 1px solid var(--red);
+  padding: 22px 4px;
+}
+
+.about-cards p {
+  font-size: 15px;
+  color: #6f685d;
+}
+
+.about-quote {
+  margin: 28px 0 48px;
+  padding: 45px;
+  border: 0;
+  border-radius: 18px;
+  background: var(--yellow);
+  color: var(--red);
+  text-align: center;
+  font-size: clamp(27px, 4vw, 46px);
+  line-height: 1.45;
+}
+
+.about-quote small {
+  display: block;
+  margin-top: 12px;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: var(--ink);
+}
+
+@media (max-width: 900px) {
+  .about-layout { grid-template-columns: 1fr; }
+  .about-portrait { min-height: 400px; }
+  .about-cards { gap: 18px; }
+}
+
+@media (max-width: 600px) {
+  nav {
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+  nav::-webkit-scrollbar { display: none; }
+  nav a { padding: 8px 11px; }
+  .about-portrait { min-height: 310px; }
+  .about-copy { padding: 26px; }
+  .about-cards { grid-template-columns: 1fr; gap: 0; }
+  .about-quote { padding: 30px 20px; }
+}
